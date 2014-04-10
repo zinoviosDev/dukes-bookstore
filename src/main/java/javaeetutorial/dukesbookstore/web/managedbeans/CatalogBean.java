@@ -9,7 +9,8 @@ package javaeetutorial.dukesbookstore.web.managedbeans;
 
 import java.io.Serializable;
 import java.util.List;
-import javaeetutorial.dukesbookstore.entity.Book;
+import javaeetutorial.dukesbookstore.entity.Pet;
+
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -25,23 +26,23 @@ public class CatalogBean extends AbstractBean implements Serializable {
 
     /**
      * <p>Return the currently selected
-     * <code>Book</code> instance from the user request.</p>
+     * <code>Pet</code> instance from the user request.</p>
      */
-    protected Book book() {
-        Book book;
-        book = (Book) context().getExternalContext()
-           .getRequestMap().get("book");
+    protected Pet book() {
+        Pet pet;
+        pet = (Pet) context().getExternalContext()
+           .getRequestMap().get("pet");
 
-        return (book);
+        return (pet);
     }
 
     /**
      * <p>Add the selected item to our shopping cart.</p>
      */
     public String add() {
-        Book book = book();
-        cart.add(book.getBookId(), book);
-        message(null, "ConfirmAdd", new Object[]{book.getTitle()});
+        Pet pet = book();
+        cart.add(pet.getPetId(), pet);
+        message(null, "ConfirmAdd", new Object[]{pet.getTitle()});
 
         return ("bookcatalog");
     }
@@ -67,17 +68,17 @@ public class CatalogBean extends AbstractBean implements Serializable {
 
     public int getBookQuantity() {
         int bookQuantity = 0;
-        Book book = book();
+        Pet pet = book();
 
-        if (book == null) {
+        if (pet == null) {
             return bookQuantity;
         }
 
         List<ShoppingCartItem> results = cart.getItems();
         for (ShoppingCartItem item : results) {
-            Book bd = (Book) item.getItem();
+            Pet bd = (Pet) item.getItem();
 
-            if ((bd.getBookId()).equals(book.getBookId())) {
+            if ((bd.getPetId()).equals(pet.getPetId())) {
                 bookQuantity = item.getQuantity();
 
                 break;

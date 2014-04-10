@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javaeetutorial.dukesbookstore.entity.Book;
+import javaeetutorial.dukesbookstore.entity.Pet;
 import javaeetutorial.dukesbookstore.exception.BookNotFoundException;
 import javaeetutorial.dukesbookstore.exception.BooksNotFoundException;
 import javaeetutorial.dukesbookstore.exception.OrderException;
@@ -41,33 +41,33 @@ public class BookRequestBean {
             String title, Double price, Boolean onsale, Integer calendarYear,
             String description, Integer inventory) {
         try {
-            Book book = new Book(bookId, surname, firstname, title, price,
+            Pet pet = new Pet(bookId, surname, firstname, title, price,
                     onsale, calendarYear, description, inventory);
-            logger.log(Level.INFO, "Created book {0}", bookId);
-            em.persist(book);
-            logger.log(Level.INFO, "Persisted book {0}", bookId);
+            logger.log(Level.INFO, "Created pet {0}", bookId);
+            em.persist(pet);
+            logger.log(Level.INFO, "Persisted pet {0}", bookId);
         } catch (Exception ex) {
             throw new EJBException(ex.getMessage());
         }
     }
 
-    public List<Book> getBooks() throws BooksNotFoundException {
+    public List<Pet> getBooks() throws BooksNotFoundException {
         try {
-            return (List<Book>) em.createNamedQuery("findBooks").getResultList();
+            return (List<Pet>) em.createNamedQuery("findPets").getResultList();
         } catch (Exception ex) {
             throw new BooksNotFoundException(
                     "Could not get books: " + ex.getMessage());
         }
     }
 
-    public Book getBook(String bookId) throws BookNotFoundException {
-        Book requestedBook = em.find(Book.class, bookId);
+    public Pet getBook(String bookId) throws BookNotFoundException {
+        Pet requestedPet = em.find(Pet.class, bookId);
 
-        if (requestedBook == null) {
+        if (requestedPet == null) {
             throw new BookNotFoundException("Couldn't find book: " + bookId);
         }
 
-        return requestedBook;
+        return requestedPet;
     }
 
     public void buyBooks(ShoppingCart cart) throws OrderException {
@@ -77,8 +77,8 @@ public class BookRequestBean {
         try {
             while (i.hasNext()) {
                 ShoppingCartItem sci = (ShoppingCartItem) i.next();
-                Book bd = (Book) sci.getItem();
-                String id = bd.getBookId();
+                Pet bd = (Pet) sci.getItem();
+                String id = bd.getPetId();
                 int quantity = sci.getQuantity();
                 buyBook(id, quantity);
             }
@@ -90,14 +90,14 @@ public class BookRequestBean {
     public void buyBook(String bookId, int quantity)
             throws OrderException {
         try {
-            Book requestedBook = em.find(Book.class, bookId);
+            Pet requestedPet = em.find(Pet.class, bookId);
 
-            if (requestedBook != null) {
-                int inventory = requestedBook.getInventory();
+            if (requestedPet != null) {
+                int inventory = requestedPet.getInventory();
 
                 if ((inventory - quantity) >= 0) {
                     int newInventory = inventory - quantity;
-                    requestedBook.setInventory(newInventory);
+                    requestedPet.setInventory(newInventory);
                 } else {
                     throw new OrderException(
                             "Not enough of " + bookId

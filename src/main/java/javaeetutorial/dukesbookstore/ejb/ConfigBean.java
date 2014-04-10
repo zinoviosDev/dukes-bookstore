@@ -29,7 +29,7 @@ public class ConfigBean {
                 "My Early Years: Growing Up on *7",
                 30.75, false, 2005, "What a cool book.", 20);
         request.createBook("202", "Jeeves", "",
-                "Web Servers for Fun and Profit", 40.75, true,
+                "Web Servers for Fun and Profit Test Four", 40.75, true,
                 2010, "What a cool book.", 20);
         request.createBook("203", "Masterson", "Webster",
                 "Web Components for Web Developers",

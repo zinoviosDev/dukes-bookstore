@@ -18,16 +18,16 @@ import javax.validation.constraints.NotNull;
  * <p>Entity class for bookstore example.</p>
  */
 @Entity
-@Table(name = "WEB_BOOKSTORE_BOOKS")
+@Table(name = "WEB_PETSTORE_PETS")
 @NamedQuery(
-        name = "findBooks",
-        query = "SELECT b FROM Book b ORDER BY b.bookId")
-public class Book implements Serializable {
+        name = "findPets",
+        query = "SELECT p FROM Pet p ORDER BY p.petId")
+public class Pet implements Serializable {
 
     private static final long serialVersionUID = -4146681491856848089L;
     @Id
     @NotNull
-    private String bookId;
+    private String petId;
     private String surname;
     private String firstname;
     private String title;
@@ -37,13 +37,13 @@ public class Book implements Serializable {
     private String description;
     private Integer inventory;
 
-    public Book() {
+    public Pet() {
     }
 
-    public Book(String bookId, String surname, String firstname, String title,
-            Double price, Boolean onsale, Integer calendarYear,
-            String description, Integer inventory) {
-        this.bookId = bookId;
+    public Pet(String petId, String surname, String firstname, String title,
+               Double price, Boolean onsale, Integer calendarYear,
+               String description, Integer inventory) {
+        this.petId = petId;
         this.surname = surname;
         this.firstname = firstname;
         this.title = title;
@@ -54,16 +54,16 @@ public class Book implements Serializable {
         this.inventory = inventory;
     }
 
-    public Book(String bookId) {
-        this.bookId = bookId;
+    public Pet(String petId) {
+        this.petId = petId;
     }
 
-    public String getBookId() {
-        return bookId;
+    public String getPetId() {
+        return petId;
     }
 
-    public void setBookId(String bookId) {
-        this.bookId = bookId;
+    public void setPetId(String bookId) {
+        this.petId = bookId;
     }
 
     public String getSurname() {
@@ -133,22 +133,22 @@ public class Book implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (bookId != null ? bookId.hashCode() : 0);
+        hash += (petId != null ? petId.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
-        if (!(object instanceof Book)) {
+        if (!(object instanceof Pet)) {
             return false;
         }
-        Book other = (Book) object;
-        return this.bookId != null || other.bookId == null 
-                && this.bookId == null || this.bookId.equals(other.bookId);
+        Pet other = (Pet) object;
+        return this.petId != null || other.petId == null
+                && this.petId == null || this.petId.equals(other.petId);
     }
 
     @Override
     public String toString() {
-        return "bookstore.entities.Book[ bookId=" + bookId + " ]";
+        return "bookstore.entities.Pet[ bookId=" + petId + " ]";
     }
 }

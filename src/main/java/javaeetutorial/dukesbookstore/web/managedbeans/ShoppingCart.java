@@ -13,7 +13,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javaeetutorial.dukesbookstore.entity.Book;
+import javaeetutorial.dukesbookstore.entity.Pet;
+
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -37,12 +38,12 @@ public class ShoppingCart extends AbstractBean implements Serializable {
         items = new HashMap<>();
     }
 
-    public synchronized void add(String bookId, Book book) {
+    public synchronized void add(String bookId, Pet pet) {
         if (items.containsKey(bookId)) {
             ShoppingCartItem scitem = (ShoppingCartItem) items.get(bookId);
             scitem.incrementQuantity();
         } else {
-            ShoppingCartItem newItem = new ShoppingCartItem(book);
+            ShoppingCartItem newItem = new ShoppingCartItem(pet);
             items.put(bookId, newItem);
         }
     }
@@ -79,9 +80,9 @@ public class ShoppingCart extends AbstractBean implements Serializable {
     public synchronized double getTotal() {
         double amount = 0.0;
         for (ShoppingCartItem item : getItems()) {
-            Book bookDetails = (Book) item.getItem();
+            Pet petDetails = (Pet) item.getItem();
 
-            amount += (item.getQuantity() * bookDetails.getPrice());
+            amount += (item.getQuantity() * petDetails.getPrice());
         }
 
         return roundOff(amount);
