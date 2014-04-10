@@ -1,3 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="4" />
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3967197217">
+    <data-source source="LOCAL" name="Derby - books" uuid="cbe0625e-3b5b-42c7-8bca-1b8a164b81d1">
+      <driver-ref>derby.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby:localhost:1527/books</jdbc-url>
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbynet.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyrun.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbytools.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyLocale_cs.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyLocale_de_DE.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyLocale_es.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyLocale_fr.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyLocale_hu.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyLocale_it.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyLocale_ja_JP.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyLocale_ko_KR.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyLocale_pl.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyLocale_pt_BR.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyLocale_ru.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyLocale_zh_CN.jar</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/../../../../../javadb/lib/derbyLocale_zh_TW.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Derby - [2]" uuid="39929228-ab24-45b6-85e0-dc057b062a70">
+      <driver-ref>derby.remote</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby://localhost:1527</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
 
