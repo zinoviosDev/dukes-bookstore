@@ -62,8 +62,8 @@ public class Pet implements Serializable {
         return petId;
     }
 
-    public void setPetId(String bookId) {
-        this.petId = bookId;
+    public void setPetId(String petId) {
+        this.petId = petId;
     }
 
     public String getSurname() {
