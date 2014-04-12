@@ -38,7 +38,7 @@ public class PetstoreBean extends AbstractBean implements Serializable {
 
     /**
      * <p>Return the
-     * <code>Product</code> for the featured book.</p>
+     * <code>Product</code> for the featured product.</p>
      */
     public Product getFeatured() {
         int featuredProductPos = 4; // "The Green Project"
@@ -74,13 +74,13 @@ public class PetstoreBean extends AbstractBean implements Serializable {
             cart.add(id, product);
             message(null, "ConfirmAdd", new Object[]{product.getName()});
         } catch (ProductNotFoundException e) {
-            throw new FacesException("Could not get book: " + e);
+            throw new FacesException("Could not get product: " + e);
         }
         return ("bookcatalog");
     }
 
     /**
-     * <p>Show the details page for the featured book.</p>
+     * <p>Show the details page for the featured product.</p>
      */
     public String details() {
         context().getExternalContext().getSessionMap().put(
@@ -97,7 +97,7 @@ public class PetstoreBean extends AbstractBean implements Serializable {
             Product product = productRequestBean.getProduct(id);
             context().getExternalContext().getSessionMap().put("selected", product);
         } catch (ProductNotFoundException e) {
-            throw new FacesException("Could not get book: " + e);
+            throw new FacesException("Could not get product: " + e);
         }
         return ("bookdetails");
     }
@@ -109,7 +109,7 @@ public class PetstoreBean extends AbstractBean implements Serializable {
             Product product = productRequestBean.getProduct(id);
             title = product.getName();
         } catch (ProductNotFoundException e) {
-            throw new FacesException("Could not get book title: " + e);
+            throw new FacesException("Could not get product title: " + e);
         }
         return title;
     }

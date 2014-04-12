@@ -28,7 +28,7 @@ public class CatalogBean extends AbstractBean implements Serializable {
      * <p>Return the currently selected
      * <code>Product</code> instance from the user request.</p>
      */
-    protected Product book() {
+    protected Product product() {
         Product product;
         product = (Product) context().getExternalContext()
            .getRequestMap().get("product");
@@ -40,7 +40,7 @@ public class CatalogBean extends AbstractBean implements Serializable {
      * <p>Add the selected item to our shopping cart.</p>
      */
     public String add() {
-        Product product = book();
+        Product product = product();
         cart.add(product.getId(), product);
         message(null, "ConfirmAdd", new Object[]{product.getName()});
 
@@ -48,10 +48,10 @@ public class CatalogBean extends AbstractBean implements Serializable {
     }
 
     /**
-     * <p>Show the details page for the current book.</p>
+     * <p>Show the details page for the current product.</p>
      */
     public String details() {
-        context().getExternalContext().getSessionMap().put("selected", book());
+        context().getExternalContext().getSessionMap().put("selected", product());
 
         return ("bookdetails");
     }
@@ -68,7 +68,7 @@ public class CatalogBean extends AbstractBean implements Serializable {
 
     public int getBookQuantity() {
         int bookQuantity = 0;
-        Product product = book();
+        Product product = product();
 
         if (product == null) {
             return bookQuantity;

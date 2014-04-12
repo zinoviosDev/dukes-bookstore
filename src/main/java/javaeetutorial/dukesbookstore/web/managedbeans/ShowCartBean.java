@@ -44,7 +44,7 @@ public class ShowCartBean extends AbstractBean implements Serializable {
     }
 
     /**
-     * <p>Show the details page for the current book.</p>
+     * <p>Show the details page for the current product.</p>
      */
     public String details() {
         context().getExternalContext().getSessionMap()
