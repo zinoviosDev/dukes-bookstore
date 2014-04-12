@@ -4,7 +4,6 @@
  * You may not modify, use, reproduce, or distribute this software except in
  * compliance with  the terms of the License at:
  * http://java.net/projects/javaeetutorial/pages/BerkeleyLicense
- * Added comment to push branch
  */
 package javaeetutorial.dukesbookstore.entity;
 
@@ -19,35 +18,35 @@ import javax.validation.constraints.NotNull;
  * <p>Entity class for bookstore example.</p>
  */
 @Entity
-@Table(name = "WEB_PETSTORE_PETS")
+@Table(name = "WEB_PETSTORE_PRODUCTS")
 @NamedQuery(
-        name = "findPets",
-        query = "SELECT p FROM Pet p ORDER BY p.petId")
-public class Pet implements Serializable {
+        name = "findProducts",
+        query = "SELECT p FROM Product p ORDER BY p.id")
+public class Product implements Serializable {
 
     private static final long serialVersionUID = -4146681491856848089L;
     @Id
     @NotNull
-    private String petId;
-    private String surname;
-    private String firstname;
-    private String title;
+    private String id;
+    private String weight;
+    private String size;
+    private String name;
     private Double price;
     private Boolean onsale;
     private Integer calendarYear;
     private String description;
     private Integer inventory;
 
-    public Pet() {
+    public Product() {
     }
 
-    public Pet(String petId, String surname, String firstname, String title,
-               Double price, Boolean onsale, Integer calendarYear,
-               String description, Integer inventory) {
-        this.petId = petId;
-        this.surname = surname;
-        this.firstname = firstname;
-        this.title = title;
+    public Product(String id, String weight, String size, String name,
+                   Double price, Boolean onsale, Integer calendarYear,
+                   String description, Integer inventory) {
+        this.id = id;
+        this.weight = weight;
+        this.size = size;
+        this.name = name;
         this.price = price;
         this.onsale = onsale;
         this.calendarYear = calendarYear;
@@ -55,40 +54,40 @@ public class Pet implements Serializable {
         this.inventory = inventory;
     }
 
-    public Pet(String petId) {
-        this.petId = petId;
+    public Product(String id) {
+        this.id = id;
     }
 
-    public String getPetId() {
-        return petId;
+    public String getId() {
+        return id;
     }
 
-    public void setPetId(String petId) {
-        this.petId = petId;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getWeight() {
+        return weight;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getSize() {
+        return size;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setSize(String size) {
+        this.size = size;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String title) {
+        this.name = title;
     }
 
     public Double getPrice() {
@@ -134,22 +133,22 @@ public class Pet implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (petId != null ? petId.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
-        if (!(object instanceof Pet)) {
+        if (!(object instanceof Product)) {
             return false;
         }
-        Pet other = (Pet) object;
-        return this.petId != null || other.petId == null
-                && this.petId == null || this.petId.equals(other.petId);
+        Product other = (Product) object;
+        return this.id != null || other.id == null
+                && this.id == null || this.id.equals(other.id);
     }
 
     @Override
     public String toString() {
-        return "bookstore.entities.Pet[ bookId=" + petId + " ]";
+        return "bookstore.entities.Product[ bookId=" + id + " ]";
     }
 }

@@ -8,7 +8,7 @@
 package javaeetutorial.dukesbookstore.web.managedbeans;
 
 import java.io.Serializable;
-import javaeetutorial.dukesbookstore.entity.Pet;
+import javaeetutorial.dukesbookstore.entity.Product;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -57,10 +57,10 @@ public class ShowCartBean extends AbstractBean implements Serializable {
      * <p>Remove the item from the shopping cart.</p>
      */
     public String remove() {
-        Pet pet = (Pet) item().getItem();
-        cart.remove(pet.getPetId());
+        Product product = (Product) item().getItem();
+        cart.remove(product.getId());
         setCartChanged(true);
-        message(null, "ConfirmRemove", new Object[]{pet.getTitle()});
+        message(null, "ConfirmRemove", new Object[]{product.getName()});
 
         return (null);
     }

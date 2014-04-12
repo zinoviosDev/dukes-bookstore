@@ -8,7 +8,8 @@
 package javaeetutorial.dukesbookstore.web.managedbeans;
 
 import java.io.Serializable;
-import javaeetutorial.dukesbookstore.entity.Pet;
+import javaeetutorial.dukesbookstore.entity.Product;
+
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -25,10 +26,10 @@ public class BookDetailsBean extends AbstractBean implements Serializable {
      * <p>Add the displayed item to our shopping cart.</p>
      */
     public String add() {
-        Pet pet = (Pet) context().getExternalContext()
+        Product product = (Product) context().getExternalContext()
                 .getSessionMap().get("selected");
-        cart.add(pet.getPetId(), pet);
-        message(null, "ConfirmAdd", new Object[]{pet.getTitle()});
+        cart.add(product.getId(), product);
+        message(null, "ConfirmAdd", new Object[]{product.getName()});
 
         return ("bookcatalog");
     }

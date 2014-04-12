@@ -55,7 +55,7 @@
             </p>
             <h:dataTable id="books"
                          value="#{store.books}"
-                         var="pet"
+                         var="product"
                          headerClass="list-header"
                          styleClass="list-background"
                          rowClasses="list-row-even, list-row-odd"
@@ -76,9 +76,9 @@
                         <h:outputText value="#{bundle.ItemTitle}"/>
                     </f:facet>
                     <h:commandLink action="#{catalog.details}"
-                                   value="#{pet.title}">
-                        <f:setPropertyActionListener target="#{requestScope.pet}"
-                                                     value="#{pet}"/>
+                                   value="#{product.name}">
+                        <f:setPropertyActionListener target="#{requestScope.product}"
+                                                     value="#{product}"/>
                     </h:commandLink>
                 </h:column>
 
@@ -86,14 +86,14 @@
                     <f:facet name="header">
                         <h:outputText value="#{bundle.By}"/>
                     </f:facet>
-                    <h:outputText value="#{pet.firstname} #{pet.surname}"/>
+                    <h:outputText value="#{product.size} #{product.weight}"/>
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{bundle.ItemPrice}"/>
                     </f:facet>
-                    <h:outputText value="#{pet.price}" >
+                    <h:outputText value="#{product.price}" >
                         <f:convertNumber currencySymbol="$" type="currency"/>
                     </h:outputText>
                 </h:column>
@@ -102,7 +102,7 @@
                     <f:facet name="header">
                         <h:outputText value="#{bundle.Inventory}" />
                     </f:facet>
-                    <h:outputText value="#{pet.inventory}"/>
+                    <h:outputText value="#{product.inventory}"/>
                 </h:column>
 
                 <h:column>
@@ -112,8 +112,8 @@
                     <h:commandButton id="add"
                                      action="#{catalog.add}" 
                                      value="#{bundle.CartAdd}">
-                        <f:setPropertyActionListener target="#{requestScope.pet}"
-                                                     value="#{pet}"/>
+                        <f:setPropertyActionListener target="#{requestScope.product}"
+                                                     value="#{product}"/>
                     </h:commandButton>
                 </h:column>
 

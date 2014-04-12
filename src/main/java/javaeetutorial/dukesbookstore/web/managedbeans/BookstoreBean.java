@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javaeetutorial.dukesbookstore.ejb.BookRequestBean;
-import javaeetutorial.dukesbookstore.entity.Pet;
+import javaeetutorial.dukesbookstore.entity.Product;
 import javaeetutorial.dukesbookstore.exception.BookNotFoundException;
 import javaeetutorial.dukesbookstore.exception.BooksNotFoundException;
 import javax.ejb.EJB;
@@ -30,20 +30,20 @@ public class BookstoreBean extends AbstractBean implements Serializable {
     private static final Logger logger =
             Logger.getLogger("dukesbookstore.web.managedBeans.BookStoreBean");
     private static final long serialVersionUID = 7829793160074383708L;
-    private Pet featured = null;
+    private Product featured = null;
     protected String title;
     @EJB
     BookRequestBean bookRequestBean;
 
     /**
      * <p>Return the
-     * <code>Pet</code> for the featured book.</p>
+     * <code>Product</code> for the featured book.</p>
      */
-    public Pet getFeatured() {
+    public Product getFeatured() {
         int featuredBookPos = 4; // "The Green Project"
         if (featured == null) {
             try {
-                featured = (Pet) bookRequestBean.getBooks().get(featuredBookPos);
+                featured = (Product) bookRequestBean.getBooks().get(featuredBookPos);
             } catch (BooksNotFoundException e) {
                 // Real apps would deal with error conditions better than this
                 throw new FacesException("Could not get books: " + e);
@@ -57,9 +57,9 @@ public class BookstoreBean extends AbstractBean implements Serializable {
      * <p>Add the featured item to our shopping cart.</p>
      */
     public String add() {
-        Pet pet = getFeatured();
-        cart.add(pet.getPetId(), pet);
-        message(null, "ConfirmAdd", new Object[]{pet.getTitle()});
+        Product product = getFeatured();
+        cart.add(product.getId(), product);
+        message(null, "ConfirmAdd", new Object[]{product.getName()});
 
         return ("bookcatalog");
     }
@@ -69,9 +69,9 @@ public class BookstoreBean extends AbstractBean implements Serializable {
         try {
             String bookId = (String) context().getExternalContext().
                     getSessionMap().get("bookId");
-            Pet pet = bookRequestBean.getBook(bookId);
-            cart.add(bookId, pet);
-            message(null, "ConfirmAdd", new Object[]{pet.getTitle()});
+            Product product = bookRequestBean.getBook(bookId);
+            cart.add(bookId, product);
+            message(null, "ConfirmAdd", new Object[]{product.getName()});
         } catch (BookNotFoundException e) {
             throw new FacesException("Could not get book: " + e);
         }
@@ -93,8 +93,8 @@ public class BookstoreBean extends AbstractBean implements Serializable {
         logger.log(Level.INFO, "Entering BookstoreBean.selectedDetails");
         try {
             String bookId = (String) context().getExternalContext().getSessionMap().get("bookId");
-            Pet pet = bookRequestBean.getBook(bookId);
-            context().getExternalContext().getSessionMap().put("selected", pet);
+            Product product = bookRequestBean.getBook(bookId);
+            context().getExternalContext().getSessionMap().put("selected", product);
         } catch (BookNotFoundException e) {
             throw new FacesException("Could not get book: " + e);
         }
@@ -105,15 +105,15 @@ public class BookstoreBean extends AbstractBean implements Serializable {
         logger.log(Level.INFO, "Entering BookstoreBean.getSelectedTitle");
         try {
             String bookId = (String) context().getExternalContext().getSessionMap().get("bookId");
-            Pet pet = bookRequestBean.getBook(bookId);
-            title = pet.getTitle();
+            Product product = bookRequestBean.getBook(bookId);
+            title = product.getName();
         } catch (BookNotFoundException e) {
             throw new FacesException("Could not get book title: " + e);
         }
         return title;
     }
 
-    public List<Pet> getBooks() {
+    public List<Product> getBooks() {
         try {
             return bookRequestBean.getBooks();
         } catch (BooksNotFoundException e) {

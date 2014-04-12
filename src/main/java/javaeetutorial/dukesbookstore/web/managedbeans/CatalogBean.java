@@ -9,7 +9,7 @@ package javaeetutorial.dukesbookstore.web.managedbeans;
 
 import java.io.Serializable;
 import java.util.List;
-import javaeetutorial.dukesbookstore.entity.Pet;
+import javaeetutorial.dukesbookstore.entity.Product;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -26,23 +26,23 @@ public class CatalogBean extends AbstractBean implements Serializable {
 
     /**
      * <p>Return the currently selected
-     * <code>Pet</code> instance from the user request.</p>
+     * <code>Product</code> instance from the user request.</p>
      */
-    protected Pet book() {
-        Pet pet;
-        pet = (Pet) context().getExternalContext()
-           .getRequestMap().get("pet");
+    protected Product book() {
+        Product product;
+        product = (Product) context().getExternalContext()
+           .getRequestMap().get("product");
 
-        return (pet);
+        return (product);
     }
 
     /**
      * <p>Add the selected item to our shopping cart.</p>
      */
     public String add() {
-        Pet pet = book();
-        cart.add(pet.getPetId(), pet);
-        message(null, "ConfirmAdd", new Object[]{pet.getTitle()});
+        Product product = book();
+        cart.add(product.getId(), product);
+        message(null, "ConfirmAdd", new Object[]{product.getName()});
 
         return ("bookcatalog");
     }
@@ -68,17 +68,17 @@ public class CatalogBean extends AbstractBean implements Serializable {
 
     public int getBookQuantity() {
         int bookQuantity = 0;
-        Pet pet = book();
+        Product product = book();
 
-        if (pet == null) {
+        if (product == null) {
             return bookQuantity;
         }
 
         List<ShoppingCartItem> results = cart.getItems();
         for (ShoppingCartItem item : results) {
-            Pet bd = (Pet) item.getItem();
+            Product bd = (Product) item.getItem();
 
-            if ((bd.getPetId()).equals(pet.getPetId())) {
+            if ((bd.getId()).equals(product.getId())) {
                 bookQuantity = item.getQuantity();
 
                 break;
