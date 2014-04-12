@@ -15,7 +15,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 /**
- * <p>Backing bean for the <code>/bookcatalog.xhtml</code> page.</p>
+ * <p>Backing bean for the <code>/productcatalog.xhtml</code> page.</p>
  */
 @Named("catalog")
 @SessionScoped
@@ -44,7 +44,7 @@ public class CatalogBean extends AbstractBean implements Serializable {
         cart.add(product.getId(), product);
         message(null, "ConfirmAdd", new Object[]{product.getName()});
 
-        return ("bookcatalog");
+        return ("productcatalog");
     }
 
     /**
@@ -53,7 +53,7 @@ public class CatalogBean extends AbstractBean implements Serializable {
     public String details() {
         context().getExternalContext().getSessionMap().put("selected", product());
 
-        return ("bookdetails");
+        return ("productdetails");
     }
 
     public int getTotalProducts() {

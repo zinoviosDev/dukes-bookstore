@@ -20,9 +20,9 @@ import javax.inject.Named;
 
 /**
  * <p>Backing bean used by the
- * <code>/bookcatalog.xhtml</code>,
- * <code>/bookshowcart.xhtml</code>, and
- * <code>/bookcashier.xhtml</code> pages.</p>
+ * <code>/productcatalog.xhtml</code>,
+ * <code>/productshowcart.xhtml</code>, and
+ * <code>/productcashier.xhtml</code> pages.</p>
  */
 @Named("cart")
 @SessionScoped
@@ -104,7 +104,7 @@ public class ShoppingCart extends AbstractBean implements Serializable {
 
             return (null);
         } else {
-            return ("bookcashier");
+            return ("productcashier");
         }
     }
 

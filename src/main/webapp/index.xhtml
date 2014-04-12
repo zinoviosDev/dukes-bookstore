@@ -15,7 +15,7 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:bookstore="http://dukesbookstore"
-                template="./bookstoreTemplate.xhtml">
+                template="./petstoreTemplate.xhtml">
 
     <ui:define name="top"></ui:define> 
     <ui:define name="content">
@@ -67,21 +67,21 @@
             <table id="links" columns="3" width="800" role="presentation">
                 <tr>
                     <td>
-                        <h:commandLink id="Duke" action="bookstore">
+                        <h:commandLink id="Duke" action="petstore">
                             <f:actionListener 
                                 type="javaeetutorial.dukesbookstore.listeners.LinkProductChangeListener" />
                             <h:outputText value="#{bundle.Book201}"/>
                         </h:commandLink>
                     </td>
                     <td>
-                        <h:commandLink id="Jeeves" action="bookstore">
+                        <h:commandLink id="Jeeves" action="petstore">
                             <f:actionListener 
                                 type="javaeetutorial.dukesbookstore.listeners.LinkProductChangeListener" />
                             <h:outputText value="#{bundle.Book202}"/>
                         </h:commandLink>
                     </td>
                     <td>
-                        <h:commandLink id="Masterson" action="bookstore">
+                        <h:commandLink id="Masterson" action="petstore">
                             <f:actionListener 
                                 type="javaeetutorial.dukesbookstore.listeners.LinkProductChangeListener" />
                             <h:outputText value="#{bundle.Book203}"/>
@@ -90,21 +90,21 @@
                 </tr>
                 <tr>
                     <td>
-                        <h:commandLink id="Novation" action="bookstore">
+                        <h:commandLink id="Novation" action="petstore">
                             <f:actionListener 
                                 type="javaeetutorial.dukesbookstore.listeners.LinkProductChangeListener" />
                             <h:outputText value="#{bundle.Book205}"/>
                         </h:commandLink>
                     </td>
                     <td>
-                        <h:commandLink id="Thrilled" action="bookstore">
+                        <h:commandLink id="Thrilled" action="petstore">
                             <f:actionListener 
                                 type="javaeetutorial.dukesbookstore.listeners.LinkProductChangeListener" />
                             <h:outputText value="#{bundle.Book206}"/>
                         </h:commandLink>
                     </td>
                     <td>
-                        <h:commandLink id="Coding" action="bookstore">
+                        <h:commandLink id="Coding" action="petstore">
                             <f:actionListener 
                                 type="javaeetutorial.dukesbookstore.listeners.LinkProductChangeListener" />
                             <h:outputText value="#{bundle.Book207}"/>

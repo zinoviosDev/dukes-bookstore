@@ -19,10 +19,10 @@ import javax.faces.model.SelectItem;
 import javax.inject.Named;
 
 /**
- * <p>Backing bean for the <code>/bookcashier.xhtml</code> and
- * <code>bookreceipt.xhtml</code> pages.</p>
+ * <p>Backing bean for the <code>/productcashier.xhtml</code> and
+ * <code>orderreceipt.xhtml</code> pages.</p>
  */
-@Named
+@Named("cashierBean")
 @RequestScoped
 public class CashierBean extends AbstractBean {
 
@@ -145,12 +145,12 @@ public class CashierBean extends AbstractBean {
             try {
                 productRequestBean.updateInventory(cart);
             } catch (OrderException ex) {
-                return "bookordererror";
+                return "ordererror";
             }
 
             cart.clear();
 
-            return ("bookreceipt");
+            return ("orderreceipt");
         }
     }
 }

@@ -14,11 +14,11 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 /**
- * <p>Backing bean for the <code>/bookdetails.xhtml</code> page.</p>
+ * <p>Backing bean for the <code>/productdetails.xhtml</code> page.</p>
  */
 @Named("details")
 @SessionScoped
-public class BookDetailsBean extends AbstractBean implements Serializable {
+public class ProductDetailsBean extends AbstractBean implements Serializable {
 
     private static final long serialVersionUID = 2209748452115843974L;
 
@@ -31,6 +31,6 @@ public class BookDetailsBean extends AbstractBean implements Serializable {
         cart.add(product.getId(), product);
         message(null, "ConfirmAdd", new Object[]{product.getName()});
 
-        return ("bookcatalog");
+        return ("productcatalog");
     }
 }

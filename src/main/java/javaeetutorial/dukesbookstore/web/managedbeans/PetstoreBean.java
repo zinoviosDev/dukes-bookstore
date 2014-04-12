@@ -22,7 +22,7 @@ import javax.faces.FacesException;
 import javax.inject.Named;
 
 /**
- * <p>Backing bean for the <code>/bookstore.xhtml</code> page.</p>
+ * <p>Backing bean for the <code>/petstore.xhtml</code> page.</p>
  */
 @Named("store")
 @SessionScoped
@@ -32,7 +32,7 @@ public class PetstoreBean extends AbstractBean implements Serializable {
             Logger.getLogger("dukesbookstore.web.managedBeans.PetStoreBean");
     private static final long serialVersionUID = 7829793160074383708L;
     private Product featured = null;
-    protected String title;
+    protected String name;
     @EJB
     ProductRequestBean productRequestBean;
 
@@ -62,7 +62,7 @@ public class PetstoreBean extends AbstractBean implements Serializable {
         cart.add(product.getId(), product);
         message(null, "ConfirmAdd", new Object[]{product.getName()});
 
-        return ("bookcatalog");
+        return ("productcatalog");
     }
 
     public String addSelected() {
@@ -76,7 +76,7 @@ public class PetstoreBean extends AbstractBean implements Serializable {
         } catch (ProductNotFoundException e) {
             throw new FacesException("Could not get product: " + e);
         }
-        return ("bookcatalog");
+        return ("productcatalog");
     }
 
     /**
@@ -87,7 +87,7 @@ public class PetstoreBean extends AbstractBean implements Serializable {
                 "selected",
                 getFeatured());
 
-        return ("bookdetails");
+        return ("productdetails");
     }
 
     public String selectedDetails() {
@@ -99,7 +99,7 @@ public class PetstoreBean extends AbstractBean implements Serializable {
         } catch (ProductNotFoundException e) {
             throw new FacesException("Could not get product: " + e);
         }
-        return ("bookdetails");
+        return ("productdetails");
     }
 
     public String getSelectedTitle() {
@@ -107,11 +107,11 @@ public class PetstoreBean extends AbstractBean implements Serializable {
         try {
             String id = (String) context().getExternalContext().getSessionMap().get("id");
             Product product = productRequestBean.getProduct(id);
-            title = product.getName();
+            name = product.getName();
         } catch (ProductNotFoundException e) {
-            throw new FacesException("Could not get product title: " + e);
+            throw new FacesException("Could not get product name: " + e);
         }
-        return title;
+        return name;
     }
 
     public List<Product> getProducts() {

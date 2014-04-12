@@ -16,7 +16,7 @@ import javax.faces.event.ValueChangeListener;
 
 /**
  * <p>Value change listener for the name entered on the
- * <code>bookcashier.xhtml</code> page.</p>
+ * <code>productcashier.xhtml</code> page.</p>
  */
 public class NameChanged extends Object implements ValueChangeListener {
 

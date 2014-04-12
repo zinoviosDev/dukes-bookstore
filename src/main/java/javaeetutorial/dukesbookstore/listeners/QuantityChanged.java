@@ -17,7 +17,7 @@ import javax.faces.event.ValueChangeListener;
 /**
  *
  * <p>Value change listener for the quantity entered on the
- * <code>bookshowcart.xhtml</code> page.</p>
+ * <code>productshowcart.xhtml</code> page.</p>
  */
 public class QuantityChanged extends Object implements ValueChangeListener {
 

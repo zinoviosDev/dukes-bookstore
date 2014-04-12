@@ -15,7 +15,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 /**
- * <p>Backing bean for the <code>/bookshowcart.xhtml</code> page.</p>
+ * <p>Backing bean for the <code>/productshowcart.xhtml</code> page.</p>
  */
 @Named("showcart")
 @SessionScoped
@@ -50,7 +50,7 @@ public class ShowCartBean extends AbstractBean implements Serializable {
         context().getExternalContext().getSessionMap()
                 .put("selected", item().getItem());
 
-        return ("bookdetails");
+        return ("productdetails");
     }
 
     /**
