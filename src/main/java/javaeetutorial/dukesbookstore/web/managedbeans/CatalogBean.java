@@ -66,12 +66,12 @@ public class CatalogBean extends AbstractBean implements Serializable {
         this.totalProducts = totalProducts;
     }
 
-    public int getBookQuantity() {
-        int bookQuantity = 0;
+    public int getProductQuantity() {
+        int productQuantity = 0;
         Product product = product();
 
         if (product == null) {
-            return bookQuantity;
+            return productQuantity;
         }
 
         List<ShoppingCartItem> results = cart.getItems();
@@ -79,12 +79,12 @@ public class CatalogBean extends AbstractBean implements Serializable {
             Product bd = (Product) item.getItem();
 
             if ((bd.getId()).equals(product.getId())) {
-                bookQuantity = item.getQuantity();
+                productQuantity = item.getQuantity();
 
                 break;
             }
         }
 
-        return bookQuantity;
+        return productQuantity;
     }
 }
