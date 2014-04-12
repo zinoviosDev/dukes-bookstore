@@ -22,7 +22,7 @@ import javax.inject.Named;
 public class CatalogBean extends AbstractBean implements Serializable {
 
     private static final long serialVersionUID = -3594317405246398714L;
-    private int totalBooks = 0;
+    private int totalProducts = 0;
 
     /**
      * <p>Return the currently selected
@@ -56,14 +56,14 @@ public class CatalogBean extends AbstractBean implements Serializable {
         return ("bookdetails");
     }
 
-    public int getTotalBooks() {
-        totalBooks = cart.getNumberOfItems();
+    public int getTotalProducts() {
+        totalProducts = cart.getNumberOfItems();
 
-        return totalBooks;
+        return totalProducts;
     }
 
-    public void setTotalBooks(int totalBooks) {
-        this.totalBooks = totalBooks;
+    public void setTotalProducts(int totalProducts) {
+        this.totalProducts = totalProducts;
     }
 
     public int getBookQuantity() {
