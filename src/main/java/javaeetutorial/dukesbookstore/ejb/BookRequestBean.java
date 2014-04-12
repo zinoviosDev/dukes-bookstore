@@ -38,11 +38,11 @@ public class BookRequestBean {
     }
 
     public void createBook(String bookId, String surname, String firstname,
-            String title, Double price, Boolean onsale, Integer calendarYear,
+            String title, Double price, Boolean onsale,
             String description, Integer inventory) {
         try {
             Product product = new Product(bookId, surname, firstname, title, price,
-                    onsale, calendarYear, description, inventory);
+                    onsale, description, inventory);
             logger.log(Level.INFO, "Created product {0}", bookId);
             em.persist(product);
             logger.log(Level.INFO, "Persisted product {0}", bookId);
@@ -53,7 +53,7 @@ public class BookRequestBean {
 
     public List<Product> getBooks() throws BooksNotFoundException {
         try {
-            return (List<Product>) em.createNamedQuery("findPets").getResultList();
+            return (List<Product>) em.createNamedQuery("findProducts").getResultList();
         } catch (Exception ex) {
             throw new BooksNotFoundException(
                     "Could not get books: " + ex.getMessage());

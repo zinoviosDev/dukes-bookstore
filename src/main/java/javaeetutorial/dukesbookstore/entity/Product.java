@@ -33,7 +33,6 @@ public class Product implements Serializable {
     private String name;
     private Double price;
     private Boolean onsale;
-    private Integer calendarYear;
     private String description;
     private Integer inventory;
 
@@ -41,7 +40,7 @@ public class Product implements Serializable {
     }
 
     public Product(String id, String weight, String size, String name,
-                   Double price, Boolean onsale, Integer calendarYear,
+                   Double price, Boolean onsale,
                    String description, Integer inventory) {
         this.id = id;
         this.weight = weight;
@@ -49,7 +48,6 @@ public class Product implements Serializable {
         this.name = name;
         this.price = price;
         this.onsale = onsale;
-        this.calendarYear = calendarYear;
         this.description = description;
         this.inventory = inventory;
     }
@@ -86,8 +84,8 @@ public class Product implements Serializable {
         return name;
     }
 
-    public void setName(String title) {
-        this.name = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Double getPrice() {
@@ -104,14 +102,6 @@ public class Product implements Serializable {
 
     public void setOnsale(Boolean onsale) {
         this.onsale = onsale;
-    }
-
-    public Integer getCalendarYear() {
-        return calendarYear;
-    }
-
-    public void setCalendarYear(Integer calendarYear) {
-        this.calendarYear = calendarYear;
     }
 
     public String getDescription() {

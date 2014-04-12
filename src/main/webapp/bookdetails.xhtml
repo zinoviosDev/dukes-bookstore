@@ -22,11 +22,10 @@
             <!-- Retrieve the "selected" value placed in the session map by the
             BookstoreBean.details method. -->
             <h2>
-                <h:outputText value="#{selected.title}"/>
+                <h:outputText value="#{selected.name}"/>
             </h2>
             <h:outputText value="#{bundle.By}"/>
-            <em><h:outputText value="#{selected.firstname} #{selected.surname}"/></em>
-            (<h:outputText value="#{selected.calendarYear}"/>)
+            <em><h:outputText value="#{selected.weight} #{selected.size}"/></em>
             <br /><br />
 
             <h4>

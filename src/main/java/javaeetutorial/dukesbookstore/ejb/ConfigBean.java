@@ -27,22 +27,22 @@ public class ConfigBean {
     public void createData() {
         request.createBook("201", "Duke", "",
                 "My Early Years: Growing Up on *7",
-                30.75, false, 2005, "What a cool book.", 20);
+                30.75, false, "What a cool book.", 20);
         request.createBook("202", "Jeeves", "",
                 "Web Servers for Fun and Profit Test Four", 40.75, true,
-                2010, "What a cool book.", 20);
+                "What a cool book.", 20);
         request.createBook("203", "Masterson", "Webster",
                 "Web Components for Web Developers",
-                27.75, false, 2010, "What a cool book.", 20);
+                27.75, false, "What a cool book.", 20);
         request.createBook("205", "Novation", "Kevin",
                 "From Oak to Java: The Revolution of a Language",
-                10.75, true, 2008, "What a cool book.", 20);
+                10.75, true, "What a cool book.", 20);
         request.createBook("206", "Thrilled", "Ben",
                 "The Green Project: Programming for Consumer Devices",
-                30.00, true, 2008, "What a cool book.", 20);
+                30.00, true, "What a cool book.", 20);
         request.createBook("207", "Coding", "Happy",
                 "Java Intermediate Bytecodes", 30.95, true,
-                2010, "What a cool book.", 20);
+                "What a cool book.", 20);
 
     }
 }
