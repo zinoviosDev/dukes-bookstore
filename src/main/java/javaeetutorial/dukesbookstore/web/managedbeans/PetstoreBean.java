@@ -26,10 +26,10 @@ import javax.inject.Named;
  */
 @Named("store")
 @SessionScoped
-public class BookstoreBean extends AbstractBean implements Serializable {
+public class PetstoreBean extends AbstractBean implements Serializable {
 
     private static final Logger logger =
-            Logger.getLogger("dukesbookstore.web.managedBeans.BookStoreBean");
+            Logger.getLogger("dukesbookstore.web.managedBeans.PetStoreBean");
     private static final long serialVersionUID = 7829793160074383708L;
     private Product featured = null;
     protected String title;
@@ -41,10 +41,10 @@ public class BookstoreBean extends AbstractBean implements Serializable {
      * <code>Product</code> for the featured book.</p>
      */
     public Product getFeatured() {
-        int featuredBookPos = 4; // "The Green Project"
+        int featuredProductPos = 4; // "The Green Project"
         if (featured == null) {
             try {
-                featured = (Product) productRequestBean.getProducts().get(featuredBookPos);
+                featured = (Product) productRequestBean.getProducts().get(featuredProductPos);
             } catch (ProductsNotFoundException e) {
                 // Real apps would deal with error conditions better than this
                 throw new FacesException("Could not get books: " + e);
@@ -66,7 +66,7 @@ public class BookstoreBean extends AbstractBean implements Serializable {
     }
 
     public String addSelected() {
-        logger.log(Level.INFO, "Entering BookstoreBean.addSelected");
+        logger.log(Level.INFO, "Entering PetstoreBean.addSelected");
         try {
             String id = (String) context().getExternalContext().
                     getSessionMap().get("id");
@@ -91,7 +91,7 @@ public class BookstoreBean extends AbstractBean implements Serializable {
     }
 
     public String selectedDetails() {
-        logger.log(Level.INFO, "Entering BookstoreBean.selectedDetails");
+        logger.log(Level.INFO, "Entering PetstoreBean.selectedDetails");
         try {
             String id = (String) context().getExternalContext().getSessionMap().get("id");
             Product product = productRequestBean.getProduct(id);
@@ -103,7 +103,7 @@ public class BookstoreBean extends AbstractBean implements Serializable {
     }
 
     public String getSelectedTitle() {
-        logger.log(Level.INFO, "Entering BookstoreBean.getSelectedTitle");
+        logger.log(Level.INFO, "Entering PetstoreBean.getSelectedTitle");
         try {
             String id = (String) context().getExternalContext().getSessionMap().get("id");
             Product product = productRequestBean.getProduct(id);
