@@ -68,10 +68,10 @@ public class BookstoreBean extends AbstractBean implements Serializable {
     public String addSelected() {
         logger.log(Level.INFO, "Entering BookstoreBean.addSelected");
         try {
-            String bookId = (String) context().getExternalContext().
-                    getSessionMap().get("bookId");
-            Product product = productRequestBean.getProduct(bookId);
-            cart.add(bookId, product);
+            String id = (String) context().getExternalContext().
+                    getSessionMap().get("id");
+            Product product = productRequestBean.getProduct(id);
+            cart.add(id, product);
             message(null, "ConfirmAdd", new Object[]{product.getName()});
         } catch (ProductNotFoundException e) {
             throw new FacesException("Could not get book: " + e);
@@ -93,8 +93,8 @@ public class BookstoreBean extends AbstractBean implements Serializable {
     public String selectedDetails() {
         logger.log(Level.INFO, "Entering BookstoreBean.selectedDetails");
         try {
-            String bookId = (String) context().getExternalContext().getSessionMap().get("bookId");
-            Product product = productRequestBean.getProduct(bookId);
+            String id = (String) context().getExternalContext().getSessionMap().get("id");
+            Product product = productRequestBean.getProduct(id);
             context().getExternalContext().getSessionMap().put("selected", product);
         } catch (ProductNotFoundException e) {
             throw new FacesException("Could not get book: " + e);
@@ -105,8 +105,8 @@ public class BookstoreBean extends AbstractBean implements Serializable {
     public String getSelectedTitle() {
         logger.log(Level.INFO, "Entering BookstoreBean.getSelectedTitle");
         try {
-            String bookId = (String) context().getExternalContext().getSessionMap().get("bookId");
-            Product product = productRequestBean.getProduct(bookId);
+            String id = (String) context().getExternalContext().getSessionMap().get("id");
+            Product product = productRequestBean.getProduct(id);
             title = product.getName();
         } catch (ProductNotFoundException e) {
             throw new FacesException("Could not get book title: " + e);
@@ -114,7 +114,7 @@ public class BookstoreBean extends AbstractBean implements Serializable {
         return title;
     }
 
-    public List<Product> getBooks() {
+    public List<Product> getProducts() {
         try {
             return productRequestBean.getProducts();
         } catch (ProductsNotFoundException e) {
