@@ -9,7 +9,7 @@ package javaeetutorial.dukesbookstore.web.managedbeans;
 
 import java.util.Calendar;
 import java.util.Date;
-import javaeetutorial.dukesbookstore.ejb.BookRequestBean;
+import javaeetutorial.dukesbookstore.ejb.ProductRequestBean;
 import javaeetutorial.dukesbookstore.exception.OrderException;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
@@ -28,7 +28,7 @@ public class CashierBean extends AbstractBean {
 
     private static final long serialVersionUID = -9221440716172304017L;
     @EJB
-    BookRequestBean bookRequestBean;
+    ProductRequestBean productRequestBean;
     private String name = null;
     private String creditCardNumber = null;
     private Date shipDate;
@@ -143,7 +143,7 @@ public class CashierBean extends AbstractBean {
             return null;
         } else {
             try {
-                bookRequestBean.updateInventory(cart);
+                productRequestBean.updateInventory(cart);
             } catch (OrderException ex) {
                 return "bookordererror";
             }

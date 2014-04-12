@@ -10,14 +10,14 @@ package javaeetutorial.dukesbookstore.exception;
 /**
  * <p>This application exception indicates that a book has not been found.</p>
  */
-public class BookNotFoundException extends Exception {
+public class ProductNotFoundException extends Exception {
 
     private static final long serialVersionUID = 8712363279947073702L;
 
-    public BookNotFoundException() {
+    public ProductNotFoundException() {
     }
 
-    public BookNotFoundException(String msg) {
+    public ProductNotFoundException(String msg) {
         super(msg);
     }
 }

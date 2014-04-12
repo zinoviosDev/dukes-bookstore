@@ -11,10 +11,11 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javaeetutorial.dukesbookstore.ejb.BookRequestBean;
+import javaeetutorial.dukesbookstore.ejb.ProductRequestBean;
 import javaeetutorial.dukesbookstore.entity.Product;
-import javaeetutorial.dukesbookstore.exception.BookNotFoundException;
-import javaeetutorial.dukesbookstore.exception.BooksNotFoundException;
+import javaeetutorial.dukesbookstore.exception.ProductNotFoundException;
+import javaeetutorial.dukesbookstore.exception.ProductsNotFoundException;
+
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.FacesException;
@@ -33,7 +34,7 @@ public class BookstoreBean extends AbstractBean implements Serializable {
     private Product featured = null;
     protected String title;
     @EJB
-    BookRequestBean bookRequestBean;
+    ProductRequestBean productRequestBean;
 
     /**
      * <p>Return the
@@ -43,8 +44,8 @@ public class BookstoreBean extends AbstractBean implements Serializable {
         int featuredBookPos = 4; // "The Green Project"
         if (featured == null) {
             try {
-                featured = (Product) bookRequestBean.getBooks().get(featuredBookPos);
-            } catch (BooksNotFoundException e) {
+                featured = (Product) productRequestBean.getProducts().get(featuredBookPos);
+            } catch (ProductsNotFoundException e) {
                 // Real apps would deal with error conditions better than this
                 throw new FacesException("Could not get books: " + e);
             }
@@ -69,10 +70,10 @@ public class BookstoreBean extends AbstractBean implements Serializable {
         try {
             String bookId = (String) context().getExternalContext().
                     getSessionMap().get("bookId");
-            Product product = bookRequestBean.getBook(bookId);
+            Product product = productRequestBean.getProduct(bookId);
             cart.add(bookId, product);
             message(null, "ConfirmAdd", new Object[]{product.getName()});
-        } catch (BookNotFoundException e) {
+        } catch (ProductNotFoundException e) {
             throw new FacesException("Could not get book: " + e);
         }
         return ("bookcatalog");
@@ -93,9 +94,9 @@ public class BookstoreBean extends AbstractBean implements Serializable {
         logger.log(Level.INFO, "Entering BookstoreBean.selectedDetails");
         try {
             String bookId = (String) context().getExternalContext().getSessionMap().get("bookId");
-            Product product = bookRequestBean.getBook(bookId);
+            Product product = productRequestBean.getProduct(bookId);
             context().getExternalContext().getSessionMap().put("selected", product);
-        } catch (BookNotFoundException e) {
+        } catch (ProductNotFoundException e) {
             throw new FacesException("Could not get book: " + e);
         }
         return ("bookdetails");
@@ -105,9 +106,9 @@ public class BookstoreBean extends AbstractBean implements Serializable {
         logger.log(Level.INFO, "Entering BookstoreBean.getSelectedTitle");
         try {
             String bookId = (String) context().getExternalContext().getSessionMap().get("bookId");
-            Product product = bookRequestBean.getBook(bookId);
+            Product product = productRequestBean.getProduct(bookId);
             title = product.getName();
-        } catch (BookNotFoundException e) {
+        } catch (ProductNotFoundException e) {
             throw new FacesException("Could not get book title: " + e);
         }
         return title;
@@ -115,8 +116,8 @@ public class BookstoreBean extends AbstractBean implements Serializable {
 
     public List<Product> getBooks() {
         try {
-            return bookRequestBean.getBooks();
-        } catch (BooksNotFoundException e) {
+            return productRequestBean.getProducts();
+        } catch (ProductsNotFoundException e) {
             throw new FacesException("Exception: " + e);
         }
     }
