@@ -41,7 +41,7 @@ public class ConfigBean {
                 "Dog Food",
                 50.00, true, "Very heavy.", 20);
         request.createProduct("207", "", "30cm x 70cm",
-                "Cat Litter Tray", 30.95, true,
+                "Cat Litter Tray", 5.95, true,
                 "Necessary.", 20);
 
     }
