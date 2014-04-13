@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
- * <p>Entity class for bookstore example.</p>
+ * <p>Entity class for petstore example.</p>
  */
 @Entity
 @Table(name = "WEB_PETSTORE_PRODUCTS")
@@ -139,6 +139,6 @@ public class Product implements Serializable {
 
     @Override
     public String toString() {
-        return "bookstore.entities.Product[ bookId=" + id + " ]";
+        return "petstore.entities.Product[ id=" + id + " ]";
     }
 }

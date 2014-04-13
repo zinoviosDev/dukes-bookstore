@@ -13,7 +13,7 @@ import javax.ejb.Singleton;
 import javax.ejb.Startup;
 
 /**
- * <p>Singleton bean that initializes the product database for the bookstore
+ * <p>Singleton bean that initializes the product database for the petstore
  * example.</p>
  */
 @Singleton

@@ -24,7 +24,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- * <p>Stateful session bean for the bookstore example.</p>
+ * <p>Stateful session bean for the petstore example.</p>
  */
 @Stateful
 public class ProductRequestBean {

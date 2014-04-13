@@ -38,13 +38,13 @@ public class ShoppingCart extends AbstractBean implements Serializable {
         items = new HashMap<>();
     }
 
-    public synchronized void add(String bookId, Product product) {
-        if (items.containsKey(bookId)) {
-            ShoppingCartItem scitem = (ShoppingCartItem) items.get(bookId);
+    public synchronized void add(String id, Product product) {
+        if (items.containsKey(id)) {
+            ShoppingCartItem scitem = (ShoppingCartItem) items.get(id);
             scitem.incrementQuantity();
         } else {
             ShoppingCartItem newItem = new ShoppingCartItem(product);
-            items.put(bookId, newItem);
+            items.put(id, newItem);
         }
     }
 

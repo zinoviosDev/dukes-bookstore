@@ -8,7 +8,7 @@
 package javaeetutorial.dukesbookstore.exception;
 
 /**
- * <p>This application exception indicates that books have not been found.</p>
+ * <p>This application exception indicates that products have not been found.</p>
  */
 public class ProductsNotFoundException extends Exception {
 
