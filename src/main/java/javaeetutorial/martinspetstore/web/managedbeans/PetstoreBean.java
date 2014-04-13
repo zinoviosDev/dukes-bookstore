@@ -47,7 +47,7 @@ public class PetstoreBean extends AbstractBean implements Serializable {
                 featured = (Product) productRequestBean.getProducts().get(featuredProductPos);
             } catch (ProductsNotFoundException e) {
                 // Real apps would deal with error conditions better than this
-                throw new FacesException("Could not get books: " + e);
+                throw new FacesException("Could not get products: " + e);
             }
         }
 

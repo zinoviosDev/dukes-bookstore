@@ -48,13 +48,13 @@ public class ShoppingCart extends AbstractBean implements Serializable {
         }
     }
 
-    public synchronized void remove(String bookId) {
-        if (items.containsKey(bookId)) {
-            ShoppingCartItem scitem = (ShoppingCartItem) items.get(bookId);
+    public synchronized void remove(String id) {
+        if (items.containsKey(id)) {
+            ShoppingCartItem scitem = (ShoppingCartItem) items.get(id);
             scitem.decrementQuantity();
 
             if (scitem.getQuantity() <= 0) {
-                items.remove(bookId);
+                items.remove(id);
             }
 
             numberOfItems--;
