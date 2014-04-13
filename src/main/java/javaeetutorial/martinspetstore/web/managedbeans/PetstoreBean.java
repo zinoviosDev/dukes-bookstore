@@ -102,8 +102,8 @@ public class PetstoreBean extends AbstractBean implements Serializable {
         return ("productdetails");
     }
 
-    public String getSelectedTitle() {
-        logger.log(Level.INFO, "Entering PetstoreBean.getSelectedTitle");
+    public String getSelectedName() {
+        logger.log(Level.INFO, "Entering PetstoreBean.getSelectedName");
         try {
             String id = (String) context().getExternalContext().getSessionMap().get("id");
             Product product = productRequestBean.getProduct(id);
