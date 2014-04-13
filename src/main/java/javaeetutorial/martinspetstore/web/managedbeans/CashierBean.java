@@ -39,9 +39,9 @@ public class CashierBean extends AbstractBean {
     private String stringProperty = "This is a String property";
     private String[] newsletters;
     private static final SelectItem[] newsletterItems = {
-        new SelectItem("Duke's Quarterly"),
-        new SelectItem("Innovator's Almanac"),
-        new SelectItem("Duke's Diet and Exercise Journal"),
+        new SelectItem("Martin's Quarterly"),
+        new SelectItem("Pet's Almanac"),
+        new SelectItem("Martin's Pet Diet and Exercise Journal"),
         new SelectItem("Random Ramblings")
     };
 
