@@ -14,7 +14,7 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
-                xmlns:bookstore="http://dukesbookstore"
+                xmlns:petstore="http://dukesbookstore"
                 template="./petstoreTemplate.xhtml">
 
     <ui:define name="top"></ui:define> 
@@ -22,45 +22,45 @@
 
         <h:form>
             <h:panelGrid columns="1"
-                         title="#{bundle.ChooseBook}" >
+                         title="#{bundle.ChooseProduct}" >
                 <h:outputText style="font-weight:bold" 
-                              value="#{bundle.ChooseBook}" />
+                              value="#{bundle.ChooseProduct}" />
                 <h:graphicImage id="mapImage" 
                                 name="book_all.jpg"
                                 library="images"
-                                alt="#{bundle.ChooseBook}"
+                                alt="#{bundle.ChooseProduct}"
                                 usemap="#bookMap" />
-                <bookstore:map id="bookMap"
+                <petstore:map id="bookMap"
                                current="map1" 
                                immediate="true"
                                action="bookstore">
                     <f:actionListener 
                         type="javaeetutorial.dukesbookstore.listeners.MapProductChangeListener" />
-                    <bookstore:area id="map1" value="#{Book201}"
+                    <petstore:area id="map1" value="#{Book201}"
                                     onmouseover="resources/images/book_201.jpg" 
                                     onmouseout="resources/images/book_all.jpg" 
                                     targetImage="mapImage"/>
-                    <bookstore:area id="map2" value="#{Book202}"
+                    <petstore:area id="map2" value="#{Book202}"
                                     onmouseover="resources/images/book_202.jpg"
                                     onmouseout="resources/images/book_all.jpg" 
                                     targetImage="mapImage"/>
-                    <bookstore:area id="map3" value="#{Book203}"
+                    <petstore:area id="map3" value="#{Book203}"
                                     onmouseover="resources/images/book_203.jpg" 
                                     onmouseout="resources/images/book_all.jpg" 
                                     targetImage="mapImage"/>
-                    <bookstore:area id="map4" value="#{Book205}"
+                    <petstore:area id="map4" value="#{Book205}"
                                     onmouseover="resources/images/book_205.jpg" 
                                     onmouseout="resources/images/book_all.jpg" 
                                     targetImage="mapImage"/>
-                    <bookstore:area id="map5" value="#{Book206}"
+                    <petstore:area id="map5" value="#{Book206}"
                                     onmouseover="resources/images/book_206.jpg" 
                                     onmouseout="resources/images/book_all.jpg" 
                                     targetImage="mapImage"/>
-                    <bookstore:area id="map6" value="#{Book207}"
+                    <petstore:area id="map6" value="#{Book207}"
                                     onmouseover="resources/images/book_207.jpg" 
                                     onmouseout="resources/images/book_all.jpg" 
                                     targetImage="mapImage"/>
-                </bookstore:map>
+                </petstore:map>
             </h:panelGrid>
         </h:form>
         <h:form>
