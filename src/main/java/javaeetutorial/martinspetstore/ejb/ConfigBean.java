@@ -25,24 +25,24 @@ public class ConfigBean {
 
     @PostConstruct
     public void createData() {
-        request.createProduct("201", "Duke", "",
-                "My Early Years: Growing Up on *7",
-                30.75, false, "What a cool product.", 20);
-        request.createProduct("202", "Jeeves", "",
-                "Web Servers for Fun and Profit Test Four", 40.75, true,
-                "What a cool product.", 20);
-        request.createProduct("203", "Masterson", "Webster",
-                "Web Components for Web Developers",
-                27.75, false, "What a cool product.", 20);
-        request.createProduct("205", "Novation", "Kevin",
-                "From Oak to Java: The Revolution of a Language",
-                10.75, true, "What a cool product.", 20);
-        request.createProduct("206", "Thrilled", "Ben",
-                "The Green Project: Programming for Consumer Devices",
-                30.00, true, "What a cool product.", 20);
-        request.createProduct("207", "Coding", "Happy",
-                "Java Intermediate Bytecodes", 30.95, true,
-                "What a cool product.", 20);
+        request.createProduct("201", "5kg", "",
+                "Cat Food",
+                19.99, false, "Good cat food.", 20);
+        request.createProduct("202", "10kg", "",
+                "Cat Food",
+                34.99, false, "Bigger than the smaller one.", 20);
+        request.createProduct("203", "100g", "",
+                "Fish Food",
+                4.99, false, "Flakey.", 20);
+        request.createProduct("205", "", "Large",
+                "Dog Collar",
+                9.99, true, "Collars my dog nicely.", 20);
+        request.createProduct("206", "20kg", "",
+                "Dog Food",
+                50.00, true, "Very heavy.", 20);
+        request.createProduct("207", "", "30cm x 70cm",
+                "Cat Litter Tray", 30.95, true,
+                "Necessary.", 20);
 
     }
 }
