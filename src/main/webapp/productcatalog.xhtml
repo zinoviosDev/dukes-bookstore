@@ -53,14 +53,14 @@
                               rendered="#{cart.numberOfItems > 0}"
                               value=""/>
             </p>
-            <h:dataTable id="books"
+            <h:dataTable id="products"
                          value="#{store.products}"
                          var="product"
                          headerClass="list-header"
                          styleClass="list-background"
                          rowClasses="list-row-even, list-row-odd"
                          border="1" 
-                         summary="#{bundle.BookCatalog}" >
+                         summary="#{bundle.ProductCatalog}" >
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{bundle.Quantities}" />
