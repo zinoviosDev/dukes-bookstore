@@ -8,7 +8,7 @@
 
     <application>
         <resource-bundle>
-            <base-name>javaeetutorial.dukesbookstore.web.messages.Messages</base-name>
+            <base-name>javaeetutorial.martinspetstore.web.messages.Messages</base-name>
             <var>bundle</var>
         </resource-bundle>
         <locale-config>
@@ -31,7 +31,7 @@
             managed-property elements.
         </description>
         <managed-bean-name>Product201</managed-bean-name>
-        <managed-bean-class>javaeetutorial.dukesbookstore.model.ImageArea</managed-bean-class>
+        <managed-bean-class>javaeetutorial.martinspetstore.model.ImageArea</managed-bean-class>
         <managed-bean-scope>application</managed-bean-scope>
         <managed-property>
             <description>
@@ -68,7 +68,7 @@
             managed-property elements.
         </description>
         <managed-bean-name>Product202</managed-bean-name>
-        <managed-bean-class>javaeetutorial.dukesbookstore.model.ImageArea</managed-bean-class>
+        <managed-bean-class>javaeetutorial.martinspetstore.model.ImageArea</managed-bean-class>
         <managed-bean-scope>application</managed-bean-scope>
         <managed-property>
             <description>
@@ -105,7 +105,7 @@
             managed-property elements.
         </description>
         <managed-bean-name>Product203</managed-bean-name>
-        <managed-bean-class>javaeetutorial.dukesbookstore.model.ImageArea</managed-bean-class>
+        <managed-bean-class>javaeetutorial.martinspetstore.model.ImageArea</managed-bean-class>
         <managed-bean-scope>application</managed-bean-scope>
         <managed-property>
             <description>
@@ -142,7 +142,7 @@
             managed-property elements.
         </description>
         <managed-bean-name>Product205</managed-bean-name>
-        <managed-bean-class>javaeetutorial.dukesbookstore.model.ImageArea</managed-bean-class>
+        <managed-bean-class>javaeetutorial.martinspetstore.model.ImageArea</managed-bean-class>
         <managed-bean-scope>application</managed-bean-scope>
         <managed-property>
             <description>
@@ -179,7 +179,7 @@
             managed-property elements.
         </description>
         <managed-bean-name>Product206</managed-bean-name>
-        <managed-bean-class>javaeetutorial.dukesbookstore.model.ImageArea</managed-bean-class>
+        <managed-bean-class>javaeetutorial.martinspetstore.model.ImageArea</managed-bean-class>
         <managed-bean-scope>application</managed-bean-scope>
         <managed-property>
             <description>
@@ -216,7 +216,7 @@
             managed-property elements.
         </description>
         <managed-bean-name>Product207</managed-bean-name>
-        <managed-bean-class>javaeetutorial.dukesbookstore.model.ImageArea</managed-bean-class>
+        <managed-bean-class>javaeetutorial.martinspetstore.model.ImageArea</managed-bean-class>
         <managed-bean-scope>application</managed-bean-scope>
         <managed-property>
             <description>

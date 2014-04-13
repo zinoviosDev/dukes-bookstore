@@ -14,7 +14,7 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
-                xmlns:petstore="http://dukesbookstore"
+                xmlns:petstore="http://martinspetstore"
                 template="./petstoreTemplate.xhtml">
 
     <ui:define name="top"></ui:define> 
@@ -35,7 +35,7 @@
                                immediate="true"
                                action="petstore">
                     <f:actionListener 
-                        type="javaeetutorial.dukesbookstore.listeners.MapProductChangeListener" />
+                        type="javaeetutorial.martinspetstore.listeners.MapProductChangeListener" />
                     <petstore:area id="map1" value="#{Product201}"
                                     onmouseover="resources/images/book_201.jpg" 
                                     onmouseout="resources/images/book_all.jpg" 
@@ -69,21 +69,21 @@
                     <td>
                         <h:commandLink id="Duke" action="petstore">
                             <f:actionListener 
-                                type="javaeetutorial.dukesbookstore.listeners.LinkProductChangeListener" />
+                                type="javaeetutorial.martinspetstore.listeners.LinkProductChangeListener" />
                             <h:outputText value="#{bundle.Product201}"/>
                         </h:commandLink>
                     </td>
                     <td>
                         <h:commandLink id="Jeeves" action="petstore">
                             <f:actionListener 
-                                type="javaeetutorial.dukesbookstore.listeners.LinkProductChangeListener" />
+                                type="javaeetutorial.martinspetstore.listeners.LinkProductChangeListener" />
                             <h:outputText value="#{bundle.Product202}"/>
                         </h:commandLink>
                     </td>
                     <td>
                         <h:commandLink id="Masterson" action="petstore">
                             <f:actionListener 
-                                type="javaeetutorial.dukesbookstore.listeners.LinkProductChangeListener" />
+                                type="javaeetutorial.martinspetstore.listeners.LinkProductChangeListener" />
                             <h:outputText value="#{bundle.Product203}"/>
                         </h:commandLink>
                     </td>
@@ -92,21 +92,21 @@
                     <td>
                         <h:commandLink id="Novation" action="petstore">
                             <f:actionListener 
-                                type="javaeetutorial.dukesbookstore.listeners.LinkProductChangeListener" />
+                                type="javaeetutorial.martinspetstore.listeners.LinkProductChangeListener" />
                             <h:outputText value="#{bundle.Product205}"/>
                         </h:commandLink>
                     </td>
                     <td>
                         <h:commandLink id="Thrilled" action="petstore">
                             <f:actionListener 
-                                type="javaeetutorial.dukesbookstore.listeners.LinkProductChangeListener" />
+                                type="javaeetutorial.martinspetstore.listeners.LinkProductChangeListener" />
                             <h:outputText value="#{bundle.Product206}"/>
                         </h:commandLink>
                     </td>
                     <td>
                         <h:commandLink id="Coding" action="petstore">
                             <f:actionListener 
-                                type="javaeetutorial.dukesbookstore.listeners.LinkProductChangeListener" />
+                                type="javaeetutorial.martinspetstore.listeners.LinkProductChangeListener" />
                             <h:outputText value="#{bundle.Product207}"/>
                         </h:commandLink>
                     </td>
